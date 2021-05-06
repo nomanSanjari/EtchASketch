@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const container = document.getElementById('container');
 
-    let x = 30;
+    let x = 16;
 
     function generate(x, y) {
-        container.setAttribute('style', `grid-template-rows: repeat(${x}, minmax(2px , 50px)); grid-template-columns: repeat(${y}, minmax(2px , 50px));`);
+        container.setAttribute('style', `grid-template-rows: repeat(${x}, minmax(1px , 50px)); grid-template-columns: repeat(${y}, minmax(1px , 50px));`);
     }
 
     function populate(x, y) {

@@ -15,9 +15,11 @@ body {
     position: fixed;
     top: 20%;
     left: 28%;
-    width: auto;
-    height: auto;
-    max-width: 800px;
-    max-height: 800px;
+    width: 800px;
+    height: 800px;
     display: grid;
+}
+
+#playbox {
+    position: absolute;
 }
