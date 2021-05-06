@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const container = document.getElementById('container');
+    //const sizeChange = document.getElementById('size');
 
-    let x = 30;
+    let x = 16;
+    let y = 16;
 
     function generate(x, y) {
-        container.setAttribute('style', `grid-template-rows: repeat(${x}, minmax(2px , 50px)); grid-template-columns: repeat(${y}, minmax(2px , 50px));`);
+        container.setAttribute('style', `grid-template-rows: repeat(${x}, minmax(10px , 50px)); grid-template-columns: repeat(${y}, minmax(10px , 50px));`);
     }
 
     function populate(x, y) {
@@ -25,24 +27,30 @@ document.addEventListener("DOMContentLoaded", () => {
         container.innerHTML = "";
     }
 
-    clear();
-    generate(x, x);
-    populate(x, x);
+    // function getSize() {
+    //     const newSize = prompt("Enter a new grid size");
+    //     return newSize;
+    // }
+
+    // sizeChange.addEventListener('click', () => {
+    //     const newSize = getSize();
+    //     x = newSize;
+    //     y = newSize;
+    //     console.log(x, y);
+    //     clear();
+    //     generate(x, y);
+    //     populate(x, y);
+    // });
 
     //functionality
     //mouseover for trailing functionality
     //click for picking and choosing
-    container.addEventListener('click', (callback) => {
-
-        for (let k = 1; k <= x * x; k++) {
+    container.addEventListener('mouseover', (callback) => {
+        for (let k = 1; k <= x*y; k++) {
             const field = container.childNodes;
             if (field[k]['id'] == callback['target']['id']) {
                 field[k].setAttribute('style', 'background-color:black');
             }
         }
     });
-
-
-
-
 });
