@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const container = document.getElementById('container');
+    const sizeChange = document.getElementById('size-changer');
 
     let x = 16;
 
@@ -25,14 +26,27 @@ document.addEventListener("DOMContentLoaded", () => {
         container.innerHTML = "";
     }
 
+    function getSize() {
+        const newSize = prompt("Enter a new grid size");
+        return newSize;
+    }
+
     clear();
     generate(x, x);
     populate(x, x);
 
+    sizeChange.addEventListener('click', () => {
+        const newSize = getSize();
+        x = newSize;
+        clear();
+        generate(x, x);
+        populate(x, x);
+    });
+
     //functionality
     //mouseover for trailing functionality
     //click for picking and choosing
-    container.addEventListener('click', (callback) => {
+    container.addEventListener('mouseover', (callback) => {
 
         for (let k = 1; k <= x * x; k++) {
             const field = container.childNodes;
@@ -41,8 +55,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
-
-
-
-
 });
