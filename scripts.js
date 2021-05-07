@@ -47,11 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
     //mouseover for trailing functionality
     //click for picking and choosing
     container.addEventListener('mouseover', (callback) => {
-
         for (let k = 1; k <= x * x; k++) {
             const field = container.childNodes;
             if (field[k]['id'] == callback['target']['id']) {
-                field[k].setAttribute('style', 'background-color:black');
+                field[k].setAttribute('style', `background-color: rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`);
             }
         }
     });
